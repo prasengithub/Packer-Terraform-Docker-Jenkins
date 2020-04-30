@@ -14,7 +14,7 @@ pipeline {
             
             sh 'pwd'
             sh 'ls -al'
-            sh 'cp /var/lib/jenkins/workspace/pipeline2/packer-terraform-jenkins-docker/*.* .'
+            sh 'cp /var/lib/jenkins/workspace/pipeline2/*.* .'
             sh 'ls -al'
             sh 'packer build packer.json'
             }
@@ -29,8 +29,8 @@ pipeline {
 
         stage('Build Docker Image') {
           steps {
-            sh 'cd /var/lib/jenkins/workspace/pipeline2/packer-terraform-jenkins-docker'
-            sh 'cp  /var/lib/jenkins/workspace/pipeline2/packer-terraform-jenkins-docker/* /var/lib/jenkins/workspace/pipeline2'
+            sh 'cd /var/lib/jenkins/workspace/pipeline2/'
+            sh 'cp  /var/lib/jenkins/workspace/pipeline2/* /var/lib/jenkins/workspace/pipeline2'
             sh 'docker build -t prasengithub/Jenkinspipeline:${BUILD_NUMBER} .'
             }
         }
