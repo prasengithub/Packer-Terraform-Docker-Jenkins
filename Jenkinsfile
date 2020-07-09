@@ -31,7 +31,7 @@ pipeline {
           steps {
             sh 'cd /var/lib/jenkins/workspace/pipeline2/packer-terraform-jenkins-docker-master'
             sh 'cp  /var/lib/jenkins/workspace/pipeline2/packer-terraform-jenkins-docker-master/* /var/lib/jenkins/workspace/pipeline2'
-            sh 'docker build -t prasengithub/Jenkinspipeline:${BUILD_NUMBER} .'
+            sh 'docker build -t prasengithub/DockerImage:${BUILD_NUMBER} .'
             }
         }
 
